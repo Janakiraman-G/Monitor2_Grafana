@@ -1,4 +1,5 @@
 services:
+  #added prometheus service
   prometheus:
     image: prom/prometheus
     ports:
@@ -6,11 +7,12 @@ services:
     volumes:
         - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
+  # add node exporter service
   node_exporter:
     image: prom/node-exporter:latest
     ports:
       - "9200:9200"
-
+  #add grafana service
   grafana:
     image: grafana/grafana:latest
     ports:
@@ -20,5 +22,9 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - prometheus
+
+
+
+
       
 
