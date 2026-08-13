@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+  
+# scrape_intervial: 15s --- IGNORE ---
+
+scrape_configs:
+  - job_name: "node"
+    static_configs:
+      - targets: ["node_exporter:9100"]
