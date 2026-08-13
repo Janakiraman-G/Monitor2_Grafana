@@ -23,7 +23,7 @@ services:
       - "3000:3000"
 
     #Configure environment variables for Grafana
-    # Set the admin username and password for Grafana.
+    # Set the admin username and password for Grafana. In the production we should not store the password in plain text, but for this example, we will use a simple password.
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
